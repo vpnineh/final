@@ -46,9 +46,9 @@ def main():
                 all_lines.add(line)
 
     if all_lines:
-        with open("sub.txt", "w", encoding="utf-8") as f:
+        with open("sub", "w", encoding="utf-8") as f:
             f.write('\n'.join(sorted(all_lines)))
-        print(f"✅ فایل ساخته شد: sub.txt ({len(all_lines)} کانفیگ)")
+        print(f"✅ فایل ساخته شد: sub ({len(all_lines)} کانفیگ)")
     else:
         print("⚠️ هیچ داده‌ای برای نوشتن وجود ندارد")
 
