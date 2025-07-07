@@ -1,0 +1,35 @@
+name: Run Config Merger
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'  # هر دو ساعت یک‌بار
+  push:
+    paths:
+      - run.py              # وقتی run.py تغییر کرد اجرا بشه
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Install dependencies
+        run: |
+          pip install requests
+
+      - name: ▶️ Run the script
+        run: |
+          python run.py
+
+      - name: 🧾 Save output artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: merged-config-output
+          path: sub
