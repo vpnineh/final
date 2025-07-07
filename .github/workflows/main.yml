@@ -1,19 +1,19 @@
-name: Generate Sub File
+name: Update sub.txt
 
 on:
   schedule:
-    - cron: '0 */2 * * *'  # هر دو ساعت
+    - cron: '0 */2 * * *'   # هر دو ساعت
   push:
     paths:
-      - run.py
-  workflow_dispatch:  # اجرای دستی
+      - run.py              # اگر run.py تغییر کرد
+  workflow_dispatch:        # اجرای دستی هم ممکن است
 
 jobs:
-  run-script:
+  update-sub:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🧾 Checkout repo
+      - name: 🧾 Checkout repository
         uses: actions/checkout@v3
 
       - name: 🐍 Set up Python
@@ -24,14 +24,23 @@ jobs:
       - name: 📦 Install dependencies
         run: pip install requests
 
-      - name: ▶️ Run script
+      - name: ▶️ Run script to generate sub.txt
         run: python run.py
 
-      - name: 📂 Show files
+      - name: 📂 Show generated files (debug)
         run: ls -l
 
-      - name: ☁️ Upload sub.txt
-        uses: actions/upload-artifact@v4
-        with:
-          name: sub
-          path: sub.txt
+      - name: ⚙️ Configure Git user
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+
+      - name: ✅ Commit and push if sub.txt changed
+        run: |
+          if git diff --quiet sub.txt; then
+            echo "⏭ بدون تغییر، نیازی به commit نیست"
+          else
+            git add sub.txt
+            git commit -m "🔄 Update sub.txt on $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
