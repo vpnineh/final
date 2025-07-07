@@ -3,9 +3,11 @@ import base64
 
 # لینک‌های مستقیم به فایل کانفیگ (متنی یا base64)
 config_urls = [
-    "https://raw.githubusercontent.com/user1/repo1/main/config.txt",
-    "https://raw.githubusercontent.com/user2/repo2/main/config.txt",
-    "https://raw.githubusercontent.com/user3/repo3/main/config.txt"
+    "https://github.com/Aa64n/Aa64n-/raw/refs/heads/main/b",
+    "https://github.com/Aa64n/Aa64n-/raw/refs/heads/main/backk%20up%20new",
+    "https://github.com/Aa64n/Aa64n-/raw/refs/heads/main/family",
+    "https://github.com/Aa64n/Aa64n-/raw/refs/heads/main/freind",
+    "https://github.com/Aa64n/Aa64n-/raw/refs/heads/main/wir"
 ]
 
 def download_config(url):
