@@ -11,46 +11,42 @@ config_urls = [
 
 def is_base64(s):
     try:
-        # Base64 باید فقط یک خط باشه
         return base64.b64encode(base64.b64decode(s)).decode().strip('=') == s.strip('=')
     except Exception:
         return False
 
 def fetch_and_decode(url):
     try:
-        print(f"📥 در حال دریافت: {url}")
-        response = requests.get(url, timeout=15)
-        response.raise_for_status()
-        content = response.text.strip()
-
-        # اگر بیس۶۴ بود، دیکود کنیم
+        print(f"📥 دریافت: {url}")
+        res = requests.get(url, timeout=15)
+        res.raise_for_status()
+        content = res.text.strip()
         if is_base64(content):
-            print("🔍 محتوای base64 شناسایی شد")
-            decoded = base64.b64decode(content).decode(errors="ignore")
-            return decoded
-        else:
-            return content
+            print("🔍 base64 شناسایی شد")
+            return base64.b64decode(content).decode(errors="ignore")
+        return content
     except Exception as e:
-        print(f"❌ خطا در دریافت {url}: {e}")
+        print(f"❌ خطا: {e}")
         return ""
 
 def main():
-    all_lines = set()
-
+    unique_configs = {}
+    
     for url in config_urls:
         data = fetch_and_decode(url)
-        lines = data.splitlines()
-        for line in lines:
+        for line in data.splitlines():
             line = line.strip()
-            if line:  # حذف خطوط خالی
-                all_lines.add(line)
-
-    if all_lines:
-        with open("sub", "w", encoding="utf-8") as f:
-            f.write('\n'.join(sorted(all_lines)))
-        print(f"✅ فایل ساخته شد: sub ({len(all_lines)} کانفیگ)")
-    else:
-        print("⚠️ هیچ داده‌ای برای نوشتن وجود ندارد")
+            if not line:
+                continue
+            key = line.split('#')[0].strip()  # فقط بخش قبل از #
+            if key not in unique_configs:
+                unique_configs[key] = line  # اولین نسخه رو نگه دار
+    
+    result_lines = list(unique_configs.values())
+    with open("sub", "w", encoding="utf-8") as f:
+        f.write('\n'.join(result_lines))
+    
+    print(f"✅ sub ذخیره شد ({len(result_lines)} کانفیگ یکتا)")
 
 if __name__ == "__main__":
     main()
