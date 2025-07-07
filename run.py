@@ -1,7 +1,6 @@
 import requests
 import base64
 
-# لینک‌های مستقیم به فایل کانفیگ (متنی یا base64)
 config_urls = [
     "https://github.com/Aa64n/Aa64n-/raw/refs/heads/main/b",
     "https://github.com/Aa64n/Aa64n-/raw/refs/heads/main/backk%20up%20new",
@@ -10,59 +9,42 @@ config_urls = [
     "https://github.com/Aa64n/Aa64n-/raw/refs/heads/main/wir"
 ]
 
-def download_config(url):
-    response = requests.get(url)
-    response.raise_for_status()
-    return response.text.strip()
-
-def is_base64(s):
+def is_base64_string(s):
     try:
+        # اگر رشته فقط یک خطه و احتمال Base64 بالا بود
         return base64.b64encode(base64.b64decode(s)).decode().strip('=') == s.strip('=')
     except Exception:
         return False
 
-def decode_if_base64(s):
-    if is_base64(s):
-        print("🔍 محتوای base64 شناسایی شد، در حال دیکود...")
-        return base64.b64decode(s).decode(errors='ignore')
-    return s
-
-def merge_and_clean(config_texts):
-    all_lines = []
-    for text in config_texts:
-        lines = text.strip().splitlines()
-        all_lines.extend(lines)
-
-    # حذف خطوط خالی و تکراری
-    unique_lines = sorted(set(line.strip() for line in all_lines if line.strip()))
-    return '\n'.join(unique_lines)
-
-def encode_to_base64(content):
-    encoded = base64.b64encode(content.encode()).decode()
-    return encoded
-
-def save_to_file(content, filename="sub.txt"):
-    with open(filename, 'w', encoding='utf-8') as f:
-        f.write(content)
+def fetch_and_decode(url):
+    try:
+        print(f"📥 گرفتن: {url}")
+        res = requests.get(url, timeout=10)
+        res.raise_for_status()
+        content = res.text.strip()
+        if is_base64_string(content):
+            print("🔍 دیکود Base64")
+            decoded = base64.b64decode(content).decode(errors="ignore")
+            return decoded
+        return content
+    except Exception as e:
+        print(f"❌ خطا در دریافت {url}: {e}")
+        return ""
 
 def main():
-    configs = []
-    for url in config_urls:
-        try:
-            print(f"📥 در حال دریافت: {url}")
-            text = download_config(url)
-            decoded = decode_if_base64(text)
-            configs.append(decoded)
-        except Exception as e:
-            print(f"❌ خطا در دریافت {url}: {e}")
+    all_lines = set()
 
-    if configs:
-        print("🔧 در حال ادغام و حذف تکراری‌ها...")
-        merged = merge_and_clean(configs)
-        print("🔐 در حال انکد خروجی به base64...")
-        encoded = encode_to_base64(merged)
-        save_to_file(encoded)
-        print("✅ فایل نهایی base64 ذخیره شد: sub")
+    for url in config_urls:
+        data = fetch_and_decode(url)
+        for line in data.strip().splitlines():
+            line = line.strip()
+            if line:  # حذف خطوط خالی
+                all_lines.add(line)
+
+    if all_lines:
+        with open("sub.txt", "w", encoding="utf-8") as f:
+            f.write('\n'.join(sorted(all_lines)))
+        print(f"✅ ذخیره شد: sub.txt ({len(all_lines)} خط)")
     else:
         print("⚠️ هیچ کانفیگی دریافت نشد.")
 
