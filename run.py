@@ -41,7 +41,7 @@ def encode_to_base64(content):
     encoded = base64.b64encode(content.encode()).decode()
     return encoded
 
-def save_to_file(content, filename="sub"):
+def save_to_file(content, filename="sub.txt"):
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(content)
 
