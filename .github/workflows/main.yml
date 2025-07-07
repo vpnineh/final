@@ -24,7 +24,7 @@ jobs:
       - name: 📦 Install dependencies
         run: pip install requests
 
-      - name: ▶️ Run script to generate sub.txt
+      - name: ▶️ Run script to generate sub
         run: python run.py
 
       - name: 📂 Show generated files (debug)
@@ -35,12 +35,12 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
 
-      - name: ✅ Commit and push if sub.txt changed
+      - name: ✅ Commit and push if sub changed
         run: |
-          if git diff --quiet sub.txt; then
+          if git diff --quiet sub; then
             echo "⏭ بدون تغییر، نیازی به commit نیست"
           else
-            git add sub.txt
-            git commit -m "🔄 Update sub.txt on $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git add sub
+            git commit -m "🔄 Update sub on $(date -u '+%Y-%m-%d %H:%M UTC')"
             git push
           fi
