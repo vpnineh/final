@@ -1,8 +1,8 @@
-name: Update sub.txt
+name: Update sub
 
 on:
   schedule:
-    - cron: '0 */2 * * *'   # هر دو ساعت
+    - cron: '0 */1 * * *' 
   push:
     paths:
       - run.py              # اگر run.py تغییر کرد
