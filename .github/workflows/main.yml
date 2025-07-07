@@ -2,10 +2,12 @@ name: Run Config Merger
 
 on:
   schedule:
-    - cron: '0 */2 * * *'  # هر دو ساعت یک‌بار
+    - cron: '0 */2 * * *'  # هر دو ساعت یک بار
   push:
     paths:
-      - run.py              # وقتی run.py تغییر کرد اجرا بشه
+      - run.py
+      - sub.txt
+  workflow_dispatch:  # اجرای دستی هم مجاز
 
 jobs:
   run-script:
@@ -28,8 +30,11 @@ jobs:
         run: |
           python run.py
 
-      - name: 🧾 Save output artifact
+      - name: 📂 لیست فایل‌های تولیدشده (debug)
+        run: ls -al
+
+      - name: 🧾 آپلود فایل نهایی (sub.txt)
         uses: actions/upload-artifact@v4
         with:
-          name: merged-config-output
+          name: subscription-file
           path: sub.txt
