@@ -22,7 +22,6 @@ jobs:
           python run.py
 
     - name: Push
-      if: steps.changesRandom.outputs.changed == 'true'
       run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
