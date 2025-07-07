@@ -1,40 +1,32 @@
-name: Run Config Merger
+name: Random-Lines
 
 on:
-  schedule:
-    - cron: '0 */2 * * *'  # هر دو ساعت یک بار
   push:
     paths:
-      - run.py
-      - sub.txt
-  workflow_dispatch:  # اجرای دستی هم مجاز
+      - 'run.py'
+      - '.github/workflows/main.yml'
 
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */2 * * *"
 jobs:
-  run-script:
+  build:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+    - uses: actions/checkout@v2
 
-      - name: 🐍 Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: 📦 Install dependencies
-        run: |
-          pip install requests
-
-      - name: ▶️ Run the script
-        run: |
+    - name: Run script to select random lines
+      run: |
           python run.py
 
-      - name: 📂 لیست فایل‌های تولیدشده (debug)
-        run: ls -al
-
-      - name: 🧾 آپلود فایل نهایی (sub.txt)
-        uses: actions/upload-artifact@v4
-        with:
-          name: subscription-file
-          path: sub.txt
+    - name: Push
+      if: steps.changesRandom.outputs.changed == 'true'
+      run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add sub
+          timestamp=$(TZ='Asia/Tehran' date)
+          git commit -m "✅Updated on ${timestamp}"
+          git push
