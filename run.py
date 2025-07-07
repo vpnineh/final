@@ -9,24 +9,27 @@ config_urls = [
     "https://github.com/Aa64n/Aa64n-/raw/refs/heads/main/wir"
 ]
 
-def is_base64_string(s):
+def is_base64(s):
     try:
-        # اگر رشته فقط یک خطه و احتمال Base64 بالا بود
+        # Base64 باید فقط یک خط باشه
         return base64.b64encode(base64.b64decode(s)).decode().strip('=') == s.strip('=')
     except Exception:
         return False
 
 def fetch_and_decode(url):
     try:
-        print(f"📥 گرفتن: {url}")
-        res = requests.get(url, timeout=10)
-        res.raise_for_status()
-        content = res.text.strip()
-        if is_base64_string(content):
-            print("🔍 دیکود Base64")
+        print(f"📥 در حال دریافت: {url}")
+        response = requests.get(url, timeout=15)
+        response.raise_for_status()
+        content = response.text.strip()
+
+        # اگر بیس۶۴ بود، دیکود کنیم
+        if is_base64(content):
+            print("🔍 محتوای base64 شناسایی شد")
             decoded = base64.b64decode(content).decode(errors="ignore")
             return decoded
-        return content
+        else:
+            return content
     except Exception as e:
         print(f"❌ خطا در دریافت {url}: {e}")
         return ""
@@ -36,7 +39,8 @@ def main():
 
     for url in config_urls:
         data = fetch_and_decode(url)
-        for line in data.strip().splitlines():
+        lines = data.splitlines()
+        for line in lines:
             line = line.strip()
             if line:  # حذف خطوط خالی
                 all_lines.add(line)
@@ -44,9 +48,9 @@ def main():
     if all_lines:
         with open("sub.txt", "w", encoding="utf-8") as f:
             f.write('\n'.join(sorted(all_lines)))
-        print(f"✅ ذخیره شد: sub.txt ({len(all_lines)} خط)")
+        print(f"✅ فایل ساخته شد: sub.txt ({len(all_lines)} کانفیگ)")
     else:
-        print("⚠️ هیچ کانفیگی دریافت نشد.")
+        print("⚠️ هیچ داده‌ای برای نوشتن وجود ندارد")
 
 if __name__ == "__main__":
     main()
