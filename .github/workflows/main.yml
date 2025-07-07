@@ -1,31 +1,37 @@
-name: Random-Lines
+name: Generate Sub File
 
 on:
+  schedule:
+    - cron: '0 */2 * * *'  # هر دو ساعت
   push:
     paths:
-      - 'run.py'
-      - '.github/workflows/main.yml'
+      - run.py
+  workflow_dispatch:  # اجرای دستی
 
-  workflow_dispatch:
-  schedule:
-    - cron: "0 */2 * * *"
 jobs:
-  build:
-
+  run-script:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - name: 🧾 Checkout repo
+        uses: actions/checkout@v3
 
-    - name: Run script to select random lines
-      run: |
-          python run.py
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-    - name: Push
-      run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add sub
-          timestamp=$(TZ='Asia/Tehran' date)
-          git commit -m "✅Updated on ${timestamp}"
-          git push
+      - name: 📦 Install dependencies
+        run: pip install requests
+
+      - name: ▶️ Run script
+        run: python run.py
+
+      - name: 📂 Show files
+        run: ls -l
+
+      - name: ☁️ Upload sub.txt
+        uses: actions/upload-artifact@v4
+        with:
+          name: sub
+          path: sub.txt
