@@ -162,8 +162,8 @@ def test(link):
                 p = subprocess.Popen(["./bin/sing-box", "run", "-c", f.name],
                                      stdout=subprocess.DEVNULL,
                                      stderr=subprocess.DEVNULL)
-                time.sleep(5)
-                r = requests.get("http://127.0.0.1:10808/http://gstatic.com/generate_204", timeout=3)
+                time.sleep(7)
+                r = requests.get("http://127.0.0.1:10808/http://gstatic.com/generate_204", timeout=6)
                 if r.status_code == 204:
                     result += 1
                 p.terminate()
