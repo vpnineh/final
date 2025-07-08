@@ -2,11 +2,12 @@ name: Update sub
 
 on:
   schedule:
-    - cron: '0 */1 * * *' 
+    - cron: '0 */1 * * *'
   push:
     paths:
-      - run.py              # اگر run.py تغییر کرد
-  workflow_dispatch:        # اجرای دستی هم ممکن است
+      - run.py
+      - sing-box
+  workflow_dispatch:
 
 jobs:
   update-sub:
@@ -21,14 +22,17 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: 🔐 Make sing-box executable
+        run: chmod +x sing-box
+
       - name: 📦 Install dependencies
-        run: pip install requests
+        run: pip install requests pyyaml
 
       - name: ▶️ Run script to generate sub
         run: python run.py
 
       - name: 📂 Show generated files (debug)
-        run: ls -l
+        run: ls -lh sub
 
       - name: ⚙️ Configure Git user
         run: |
