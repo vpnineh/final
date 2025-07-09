@@ -40,8 +40,7 @@ jobs:
           if git diff --quiet sub; then
             echo "⏭ بدون تغییر، نیازی به commit نیست"
           else
-            git add sub
-            git add esi
+            git add sub esi
             git commit -m "🔄 Update sub on $(date -u '+%Y-%m-%d %H:%M UTC')"
             git push
           fi
