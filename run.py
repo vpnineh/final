@@ -1,5 +1,6 @@
 import requests
 import base64
+import urllib.request
 
 config_urls = [
     "https://github.com/Aa64n/Aa64n-/raw/refs/heads/main/b",
@@ -52,16 +53,8 @@ def main():
     
     print(f"✅ sub ذخیره شد ({len(result_lines)} کانفیگ یکتا)")
 
-    # ذخیره لینک Google Drive در فایل     # دانلود محتوای لینک Google Drive و ذخیره در فایل     # دانلود و ذخیره محتوای Google Drive
-    drive_url = "https://drive.google.com/uc?export=download&id=1-EopH8hKLwaRJ3kxm3-40x4CZQ3prAzP"
-    try:
-        response = requests.get(drive_url, timeout=15)
-        response.raise_for_status()
-        with open("esi", "w", encoding="utf-8") as f:
-            f.write(response.text.strip())
-        print("✅ محتوای فایل از Google Drive در esi ذخیره شد.")
-    except Exception as e:
-        print(f"❌ خطا در دانلود esi: {e}")
+urllib.request.urlretrieve("https://drive.google.com/uc?export=download&id=1-EopH8hKLwaRJ3kxm3-40x4CZQ3prAzP", "esi")
+
              
 if __name__ == "__main__":
     main()
