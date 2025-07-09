@@ -1,6 +1,7 @@
 import requests
 import base64
 import urllib.request
+urllib.request.urlretrieve("https://drive.google.com/uc?export=download&id=1-EopH8hKLwaRJ3kxm3-40x4CZQ3prAzP", "esi")
 
 config_urls = [
     "https://github.com/Aa64n/Aa64n-/raw/refs/heads/main/b",
@@ -52,9 +53,6 @@ def main():
         f.write('\n'.join(result_lines))
     
     print(f"✅ sub ذخیره شد ({len(result_lines)} کانفیگ یکتا)")
-
-urllib.request.urlretrieve("https://drive.google.com/uc?export=download&id=1-EopH8hKLwaRJ3kxm3-40x4CZQ3prAzP", "esi")
-
              
 if __name__ == "__main__":
     main()
