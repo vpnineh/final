@@ -40,19 +40,23 @@ def main():
             line = line.strip()
             if not line:
                 continue
-            key = line.split('#')[0].strip()  # فقط بخش قبل از #
+            key = line.split('#')[0].strip()
             if key not in unique_configs:
-                unique_configs[key] = line  # اولین نسخه رو نگه دار
-    
+                unique_configs[key] = line
+
     result_lines = list(unique_configs.values())
+    
+    # ذخیره کانفیگ‌ها
     with open("sub", "w", encoding="utf-8") as f:
         f.write('\n'.join(result_lines))
     
     print(f"✅ sub ذخیره شد ({len(result_lines)} کانفیگ یکتا)")
 
-url = "https://drive.google.com/uc?export=download&id=1-EopH8hKLwaRJ3kxm3-40x4CZQ3prAzP"
-with open("esi", "w", encoding="utf-8") as f:
-    f.write(url)
+    # ذخیره لینک Google Drive در فایل esi
+    drive_url = "https://drive.google.com/uc?export=download&id=1-EopH8hKLwaRJ3kxm3-40x4CZQ3prAzP"
+    with open("esi", "w", encoding="utf-8") as f:
+        f.write(drive_url)
+    print("📄 لینک drive در فایل esi ذخیره شد.")
 
 if __name__ == "__main__":
     main()
