@@ -52,7 +52,7 @@ def main():
     
     print(f"✅ sub ذخیره شد ({len(result_lines)} کانفیگ یکتا)")
 
-    # ذخیره لینک Google Drive در فایل     # دانلود محتوای لینک Google Drive و ذخیره در فایل esi
+    # ذخیره لینک Google Drive در فایل     # دانلود محتوای لینک Google Drive و ذخیره در فایل     # دانلود و ذخیره محتوای Google Drive
     drive_url = "https://drive.google.com/uc?export=download&id=1-EopH8hKLwaRJ3kxm3-40x4CZQ3prAzP"
     try:
         response = requests.get(drive_url, timeout=15)
@@ -62,6 +62,6 @@ def main():
         print("✅ محتوای فایل از Google Drive در esi ذخیره شد.")
     except Exception as e:
         print(f"❌ خطا در دانلود esi: {e}")
-        
+             
 if __name__ == "__main__":
     main()
