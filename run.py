@@ -1,25 +1,5 @@
 import requests
 import base64
-import urllib.request 
-urllib.request.urlretrieve("https://drive.google.com/uc?export=download&id=1-EopH8hKLwaRJ3kxm3-40x4CZQ3prAzP", "esi.txt")
-
-# Open the source text files
-file1 = open('esi.txt', 'r')
-
-# Read the contents of the text files
-content1 = file1.read()
-
-# Close the source text files
-file1.close()
-
-# Open the destination file
-destination_file = open('esi', 'w')
-
-# Write the concatenated content to the destination file
-destination_file.write(content1)
-# Close the destination file
-destination_file.close()
-
 
 config_urls = [
     "https://github.com/Aa64n/Aa64n-/raw/refs/heads/main/b",
