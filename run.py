@@ -50,5 +50,9 @@ def main():
     
     print(f"✅ sub ذخیره شد ({len(result_lines)} کانفیگ یکتا)")
 
+xurl = "https://drive.google.com/uc?export=download&id=1-EopH8hKLwaRJ3kxm3-40x4CZQ3prAzP"
+with open("esi", "w", encoding="utf-8") as f:
+    f.write(xurl)
+
 if __name__ == "__main__":
     main()
