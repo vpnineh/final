@@ -89,19 +89,22 @@ vless://9b7ff7a4-7437-4688-9063-3d73ca4f8498@france.novaads.shop:42541?encryptio
 vless://9b7ff7a4-7437-4688-9063-3d73ca4f8498@ae2.aparat-movies-download.ir:42539?encryption=none&type=tcp&headerType=http&host=excoino.com&path=/&security=none#%F0%9F%87%A6%F0%9F%87%AA%20Dubai%E2%9E%81
 vless://9b7ff7a4-7437-4688-9063-3d73ca4f8498@usa.novaads.shop:42537?encryption=none&type=tcp&headerType=http&host=excoino.com&path=/&security=none#%F0%9F%87%BA%F0%9F%87%B8%20USA
 vless://9b7ff7a4-7437-4688-9063-3d73ca4f8498@persians.france-learns.ir:42555?encryption=none&type=tcp&headerType=http&host=tgju.org&path=/&security=none#%F0%9F%87%AE%F0%9F%87%B7%20%D9%81%DB%8C%D9%84%D9%85%D9%88%20,%20%D9%81%DB%8C%D9%84%D9%85%20%D9%86%D8%AA%20,%20%D9%86%D9%85%D8%A7%D9%88%D8%A7
+vless://a5c05c1e-aa68-443f-8598-09800244bd4b@192.71.82.2:443?path=%2FLiL&security=tls&encryption=none&insecure=0&host=kingcloud.biack.ir&type=ws&allowInsecure=0&sni=kingcloud.biack.ir#test1104
+trojan://humanity@89.116.46.8:443?type=ws&host=www.calmloud.com&path=/assignment&security=tls&fp=chrome&sni=www.calmloud.com&alpn=http/1.1#%D8%AA%D8%B3%D9%84%DB%8C%D8%AA%20%D8%A7%DB%8C%D8%A7%D9%85%E2%98%80%EF%B8%8F
 ss://YWVzLTI1Ni1nY206a0RXdlhZWm9UQmNHa0M0@64.31.63.244:8881?#Paris%20-%20804
 ss://YWVzLTI1Ni1nY206ZmFCQW9ENTRrODdVSkc3@109.104.154.163:2375?#Amsterdam%20-%203373
 vless://f90417b5-d7ce-4af7-8476-3b3d8c276223@104.17.54.44:2053?encryption=none&type=ws&host=shrill-poetry-f70c.gh-ghanbari62.workers.dev&path=/&security=tls&fp=chrome&sni=shrill-poetry-f70c.gh-ghanbari62.workers.dev#Aa64n
 vless://64b7b148-63e8-42c1-8921-46ebe0279ea2@104.20.27.136:2095?path=%2F%3Fed%3D2560&security=&encryption=none&host=tiny-wood-b1c3.senator20270.workers.dev&type=ws#CF-IP5-WS2095
 vless://f90417b5-d7ce-4af7-8476-3b3d8c276223@104.16.146.114:8443?encryption=none&type=ws&host=shrill-poetry-f70c.gh-ghanbari62.workers.dev&path=/&security=tls&fp=chrome&sni=shrill-poetry-f70c.gh-ghanbari62.workers.dev#Aa64n
 vless://f90417b5-d7ce-4af7-8476-3b3d8c276223@57.129.47.72:8443?encryption=none&type=ws&host=shrill-poetry-f70c.gh-ghanbari62.workers.dev&path=/&security=tls&fp=chrome&sni=shrill-poetry-f70c.gh-ghanbari62.workers.dev#Aa64n%20
+vless://659a9075-d5ab-4fd2-bf34-b37043fae832@104.18.153.10:443?encryption=none&type=ws&host=nbhhh.mrcool.kdns.fr&path=/proxyip&security=tls&sni=nbhhh.mrcool.kdns.fr#ARISTA
+vless://06b65903-406d-4a41-8400-6fd5c0ee7798@104.16.72.70:2096?encryption=none&type=ws&host=sp.linuxdododo.ccwu.cc&path=/proxyip&security=tls&fp=chrome&sni=sp.linuxdododo.ccwu.cc#ARISTA
+vless://a5c05c1e-aa68-443f-8598-09800244bd4b@192.71.82.2:443?encryption=none&type=ws&path=/LiL?ed&security=tls&fp=firefox&sni=kingcloud.biack.ir&alpn=h3#ARISTA
+trojan://86957ec0-b213-433b-a43b-51f2175e0ec3@104.18.153.10:443?type=ws&host=space.byu.id.yxls.eu.cc&path=/au-do&security=tls&sni=space.byu.id.yxls.eu.cc#ARISTA
 vless://eecdb13a-156e-4e4a-ae82-701c9a769505@104.17.51.108:2053?encryption=none&type=ws&host=node-8682474174-84369c.kianazimi491.workers.dev&path=/&security=tls&fp=chrome&sni=node-8682474174-84369c.kianazimi491.workers.dev#ersal
 vless://eecdb13a-156e-4e4a-ae82-701c9a769505@8.39.125.190:443?encryption=none&type=ws&host=node-8682474174-84369c.kianazimi491.workers.dev&path=/&security=tls&fp=chrome&sni=node-8682474174-84369c.kianazimi491.workers.dev#ersal
 vless://eecdb13a-156e-4e4a-ae82-701c9a769505@104.17.211.156:443?encryption=none&type=ws&host=node-8682474174-84369c.kianazimi491.workers.dev&path=/&security=tls&fp=chrome&sni=node-8682474174-84369c.kianazimi491.workers.dev#ersal
 vless://eecdb13a-156e-4e4a-ae82-701c9a769505@104.17.191.51:2096?encryption=none&type=ws&host=node-8682474174-84369c.kianazimi491.workers.dev&path=/&security=tls&fp=chrome&sni=node-8682474174-84369c.kianazimi491.workers.dev#ersal
-trojan://Mitivpn@151.101.56.6:443?path=%2Ffastly%3Dmitivpn&security=tls&alpn=http%2F1.1&insecure=0&host=4-4-3-mitivpn.global.ssl.fastly.net&fp=firefox&type=ws&allowInsecure=0&sni=ssl.fastly.com#new test
-vless://57152cbd-c714-5a00-8f44-07721fde8db5@217.179.5.62:443?security=&encryption=none&host=play.google.com&headerType=http&type=tcp#new teat
-vless://ef5e8ad2-9f17-4337-b4b3-9a91ea96f115@45.95.0.219:46292?security=&encryption=none&headerType=none&type=tcpnew teat
 vless://fd47216b-4217-4ec1-85b9-98304634a391@5.199.170.105:443?security=reality&encryption=none&pbk=xFUmqmEPEKyv-5ReppEM1oTkc04HQcBUfySH-EwPBlE&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=amd.com&sid=6ba85179e30d4fc2#new test
 trojan://Mitivpn@151.101.56.6:443?path=%2Fde%3Dmitivpn&security=tls&alpn=h2&insecure=0&host=4-4-3-mitivpn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#new test
 trojan://Mitivpn@151.101.110.219:443?path=%2Fde%3Dmitivpn&security=tls&alpn=http%2F1.1&insecure=0&host=3-mitivpn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#new test
