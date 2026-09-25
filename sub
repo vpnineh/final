@@ -89,6 +89,11 @@ vless://9b7ff7a4-7437-4688-9063-3d73ca4f8498@france.novaads.shop:42541?encryptio
 vless://9b7ff7a4-7437-4688-9063-3d73ca4f8498@ae2.aparat-movies-download.ir:42539?encryption=none&type=tcp&headerType=http&host=excoino.com&path=/&security=none#%F0%9F%87%A6%F0%9F%87%AA%20Dubai%E2%9E%81
 vless://9b7ff7a4-7437-4688-9063-3d73ca4f8498@usa.novaads.shop:42537?encryption=none&type=tcp&headerType=http&host=excoino.com&path=/&security=none#%F0%9F%87%BA%F0%9F%87%B8%20USA
 vless://9b7ff7a4-7437-4688-9063-3d73ca4f8498@persians.france-learns.ir:42555?encryption=none&type=tcp&headerType=http&host=tgju.org&path=/&security=none#%F0%9F%87%AE%F0%9F%87%B7%20%D9%81%DB%8C%D9%84%D9%85%D9%88%20,%20%D9%81%DB%8C%D9%84%D9%85%20%D9%86%D8%AA%20,%20%D9%86%D9%85%D8%A7%D9%88%D8%A7
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.175:443#SS44-024
+ss://YWVzLTI1Ni1nY206WEtGS2wyclVMaklwNzQ=@185.226.172.8:8008#SS44-030
+vless://0b0915d7-6800-4580-a44b-77d84f105e6a@185.79.138.71:448?type=tcp&security=reality&fp=chrome&sni=www.samsung.com&pbk=CsDgNRcCwCkPIslfZpKTIK71KFpIFNsotbdzKcZVoH8&sid=cd21e552537c7c0b#SS44-041
+vless://c9fd0fb1-8251-4106-b09a-f4b426736f67@ww9.levikogjgfdd.ir:36925?flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=chrome&sni=www.cloudflare.com&pbk=lJ9INPpO4rdnm2Tek_yg0PGFyUrBB6MoKyvqt_Mfqm0#SS44-004
+ss://YWVzLTI1Ni1nY206M2VPRmVOc3NkZTdQWVlNdg==@84.247.155.196:443#SS44-043
 vmess://eyJ2IjoiMiIsInBzIjoiRnJhbmtmdXJ0IiwiYWRkIjoiMjE2LjE1Mi4xNTIuMTg3IiwicG9ydCI6IjIyMzI0IiwiaWQiOiIwNDYyMWJhZS1hYjM2LTExZWMtYjkwOS0wMjQyYWMxMjAwMDIiLCJhaWQiOiIwIiwic2N5IjoiYXV0byIsIm5ldCI6InRjcCIsInR5cGUiOiJub25lIn0=
 vmess://eyJ2IjoiMiIsInBzIjoiQXNoYnVybiIsImFkZCI6IjE3Mi4xMTEuMzguMTAwIiwicG9ydCI6IjIyMzI0IiwiaWQiOiIwNDYyMWJhZS1hYjM2LTExZWMtYjkwOS0wMjQyYWMxMjAwMDIiLCJhaWQiOiIwIiwic2N5IjoiYXV0byIsIm5ldCI6InRjcCIsInR5cGUiOiJub25lIn0=
 vmess://eyJ2IjoiMiIsInBzIjoiVG9yb250byIsImFkZCI6IjIzLjE2Mi4yMDAuNzciLCJwb3J0IjoiMjIzMjQiLCJpZCI6IjA0NjIxYmFlLWFiMzYtMTFlYy1iOTA5LTAyNDJhYzEyMDAwMiIsImFpZCI6IjAiLCJzY3kiOiJhdXRvIiwibmV0IjoidGNwIiwidHlwZSI6Im5vbmUifQ==
@@ -164,7 +169,6 @@ vless://56a1b253-cde4-490f-9c5e-09a523882bdd@172.233.139.46:53734?flow=xtls-rprx
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.7:8080#%F0%9F%87%B3%F0%9F%87%B1%20NL%206
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.216:8080#%F0%9F%87%B3%F0%9F%87%B1%20NL%204
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptcnMyZTlh@54.36.174.140:443#%F0%9F%87%B5%F0%9F%87%B1%20PL%201
-ss://YWVzLTI1Ni1nY206WEtGS2wyclVMaklwNzQ=@185.226.172.8:8008#%F0%9F%87%A9%F0%9F%87%AA%20DE%2013
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCcW5xVG9paDBQYlU=@51.255.13.232:8388#%F0%9F%87%AB%F0%9F%87%B7%20FR%2010
 vless://nasnet@nasnet-571299667-direct.mbghalibaf.com:443?flow=xtls-rprx-vision&type=tcp&headerType=none&security=tls&fp=chrome&sni=nasnet-571299667-direct.mbghalibaf.com&path=/&host=nasnet-571299667-direct.mbghalibaf.com#%F0%9F%87%A9%F0%9F%87%AA%20DE%206
 vless://05488656-d4bf-4634-8b2e-e4ff5a56c7e2@82.118.22.161:443?flow=xtls-rprx-vision&type=tcp&security=reality&fp=safari&sni=www.cloudflare.com&pbk=xY1KpNxaIGmi6jfeudYQ_aaLGQqWK_uHStnwUFd2_2E&sid=fa3ea655619a3e78&path=/#%F0%9F%87%B5%F0%9F%87%B1%20PL%202
